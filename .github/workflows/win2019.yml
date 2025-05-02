@@ -25,8 +25,8 @@ jobs:
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
         Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1 # Ensure secure connection
-        copy wallpaper.png C:\Users\Public\Desktop\wallpaper.png # Assuming wallpaper.png is in the root
-        copy wallpaper.bat C:\Users\Public\Desktop\wallpaper.bat # Assuming wallpaper.bat is in the root
+        copy .\wallpaper.png C:\Users\Public\Desktop\wallpaper.png # Use relative path
+        copy .\wallpaper.bat C:\Users\Public\Desktop\wallpaper.bat # Use relative path
     - name: Open Tunnel.
       run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\ngrok\ngrok.exe tcp --region ap 3389"'
     - name: Initiate Connection
