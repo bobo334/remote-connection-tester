@@ -1,0 +1,9 @@
+{
+  "api_key": "YOUR_API_KEY_HERE",
+  "region": "us-east-1",
+  "timeout_seconds": 30,
+  "logging": {
+    "level": "info",
+    "file": "/var/log/app.log"
+  }
+}
